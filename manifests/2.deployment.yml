@@ -22,5 +22,12 @@ spec:
         env:
             - name: DB_HOST
               value: mysqldb
+        resources:
+          requests:
+            memory: "256Mi"  # Minimum memory requested
+            cpu: "250m"      # Minimum CPU requested (0.25 core)
+          limits:
+            memory: "512Mi"  # Maximum memory allowed
+            cpu: "500m"
       imagePullSecrets:
             - name: dockerhub-secret
